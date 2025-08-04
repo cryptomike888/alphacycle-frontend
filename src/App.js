@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import Spline from '@splinetool/react-spline';
 import './App.css';
 
 function App() {
+  const handleEnterApp = () => {
+    window.location.href = 'https://fwd-projector.streamlit.app'; // Update later if needed
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="spline-scene">
+        <Spline scene="https://prod.spline.design/c6BuKAxc6em-tNsn/scene.splinecode" />
+      </div>
+
+      <div className="headline">
+        <h1>Turning complexity into clarity.</h1>
+        <p style={{ fontSize: '1.2rem', opacity: 0.8 }}>Macro tools for modern investors.</p>
+        <button className="enter-btn" onClick={handleEnterApp}>
+          Enter App
+        </button>
+      </div>
     </div>
   );
 }
